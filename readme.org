@@ -1,0 +1,25 @@
+* Status
+Work in progress, build at your own risc. Currently only supports arduino nano as controller and XDA keycaps.
+[[./docs/img1.png]]
+[[./docs/img2.png]]
+
+* Compiling
+Install openscad, edit the variables.scad file, compile using
+#+begin_src bash :tangle yes
+bash ./compile.bash
+#+end_src
+which takes unreasonably long time to finish, or, if you are brave enough
+#+begin_src bash :tangle yes
+bash ./compile.bash manifold
+#+end_src
+which is faster, but some errors (e.g. flat artifacts) could happen. I could not replicate in in current verson of project, here is screenshot from development process
+[[./docs/manifold-bug.jpg]]
+You can also edit files in parts directory, if default configuration does not satisfy your needs.
+* TODO
+1. Add more controllers
+2. Add trackpad support
+3. Do actual ergonomics research
+4. Find mentioned manifold bug and report it
+
+* Credits
+Hotswap socket (which are currently not recomended for use) holder models is taken from [[https://www.thingiverse.com/thing:3117549][here]]
