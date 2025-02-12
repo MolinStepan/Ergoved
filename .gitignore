@@ -1,3 +1,5 @@
 testing/*
-output/*
+output/*.stl
+output/*.zip
 !output/.gitkeep
+logs/*.log

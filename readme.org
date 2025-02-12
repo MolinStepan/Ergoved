@@ -8,12 +8,13 @@ Install openscad, edit the variables.scad file, compile using
 #+begin_src bash :tangle yes
 bash ./compile.bash
 #+end_src
-which takes unreasonably long time to finish, or, if you are brave enough
+which takes unreasonably long time to finish (1h+ on my machine), or, if you are brave enough and use openscad unstable
 #+begin_src bash :tangle yes
 bash ./compile.bash manifold
 #+end_src
 which is faster, but some errors (e.g. flat artifacts) could happen. I could not replicate in in current verson of project, here is screenshot from development process
 [[./docs/manifold-bug.jpg]]
+
 You can also edit files in parts directory, if default configuration does not satisfy your needs.
 * TODO
 1. Add more controllers
