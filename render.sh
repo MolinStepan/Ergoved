@@ -3,11 +3,8 @@ for out in ./output/*.stl; do
 done
 rm ./logs/log.log >> /dev/null 2>&1
 
-
-
-counter=0
-
 compile() {
+    START=$(date +%s)
     export filename=`echo $1 | cut -c 9- | cut -d'.' -f1`
     result=0
     if [ -z ${2+x} ]; then
@@ -16,17 +13,21 @@ compile() {
         result="$(openscad --backend=$2 -o ./output/$filename.stl $1 2>&1)"
     fi
     if [[ $result != *"ERROR:"* ]]; then
-        echo "$filename.stl compiled"
+        END=$(date +%s)
+        DIFF=$(( $END - $START ))
+        if (( DIFF>59 )); then
+            printf "$filename.stl rendered in %02d:%02d:%02d\n" \
+                   "$((DIFF/3600))" "$((DIFF%3600/60))" "$((DIFF%60))"
+        else
+            echo "$filename.stl rendered in $DIFF seconds"
+        fi
     else
-        echo "$filename.scad failed, see logs"
-        echo "$filename.scad" >> ./logs/log.log
-        echo "" >> ./logs/log.log
-        echo $result >> ./logs/log.log
+        echo "$filename.scad failed"
+        echo $result
     fi
 }
 
 for file in ./parts/*.scad; do
-    counter=$(($counter+1))
     compile $file $1 &
 done
 # wait for all pids

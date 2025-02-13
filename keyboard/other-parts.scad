@@ -181,10 +181,8 @@ module leg(){
         translate([0, 0, 14]) rotate(90, [1, 0, 0])
             cylinder(12, 4.6 ,4.6, true);
     }
-        translate([0, 0, 11])
-            cube([9, 20, 2], true);
-        translate([0, 0, 5.625])
-            cube([9, 14, 11.25], true);
+        translate([0, 0, 4.625])
+            cube([9, 14, 9.25], true);
 
     translate([-sqrt(stick^2 - 9^2)/2, 0, 1.25])
         cube([sqrt(stick^2 - 9^2), 14, 2.5], true);

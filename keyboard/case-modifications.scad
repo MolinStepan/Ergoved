@@ -42,14 +42,14 @@ difference(){
         }
 
         rotatingWall
-          ( [for (i = [0:39]) f1pos + [0, 0, 6] - f1ort*10 -f1col*5 + i/2*(f1col)]
-          , [for (i = [0:39]) thumbClusterPos + -18*[cos(thumbClusterAng), sin(thumbClusterAng), 0.4] -6 * [sin(thumbClusterAng), -cos(thumbClusterAng), 0]+ i/2*[0, 0, 1]]
+          ( [for (i = [0:9]) f1pos + [0, 0, 6] - f1ort*10 -f1col*5 + i*2*(f1col)]
+          , [for (i = [0:9]) thumbClusterPos + -18*[cos(thumbClusterAng), sin(thumbClusterAng), 0.4] -6 * [sin(thumbClusterAng), -cos(thumbClusterAng), 0]+ i*2*[0, 0, 1]]
           , 2
           );
 
         rotatingWall
-          ( [for (i = [0:39]) f2pos + [0, 0, 15] - f2ort*9 -f2col*33 + i/2*(f2ort)]
-          , [for (i = [0:39]) thumbClusterPos + 18 *[cos(thumbClusterAng), sin(thumbClusterAng), -0.4] -6* [sin(thumbClusterAng), -cos(thumbClusterAng), 0] + i/2*[0, 0, 1]]
+          ( [for (i = [0:9]) f2pos + [0, 0, 15] - f2ort*9 -f2col*33 + i*2*(f2ort)]
+          , [for (i = [0:9]) thumbClusterPos + 18 *[cos(thumbClusterAng), sin(thumbClusterAng), -0.4] -6* [sin(thumbClusterAng), -cos(thumbClusterAng), 0] + i*2*[0, 0, 1]]
           , 2
           );
 

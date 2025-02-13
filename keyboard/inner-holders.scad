@@ -20,12 +20,6 @@ module TRRSHolderBottom () {
     }
 }
 
-module TRRSHole(){ union () {
-    translate([-1.5, 6, 2.6])rotate(90, [0, -1, 0])
-        cylinder(20, 4.5, 4.5);
-    translate([0.1, 6, 2.6])rotate(90, [0, -1, 0])
-        cylinder(20, 2.5, 2.5);
-}}
 module TRRSHolderCentered () {
 
     difference(){
@@ -87,6 +81,7 @@ module arduinoNanoUSBCHolderBottom () { union(){
                 translate([0, 0, -50])
                     cube([11.5, 6.25, 50]);
             }
+
         }
         translate([41.8, 0, -50])
             cube([4, 5.75, 50]);
@@ -103,7 +98,7 @@ module arduinoNanoUSBCHolderBottom () { union(){
 
 
 
-module ArduinoProMicroUSBCHolder () { union(){
+module arduinoProMicroUSBCHolder () { union(){
     translate([0, -11, -3.6]) {
         translate([-10, 0, 0]) {
             cube([17, 1.75, 3]);
@@ -112,15 +107,37 @@ module ArduinoProMicroUSBCHolder () { union(){
             translate([0, 0, 2])
                 cube([14, 4, 2]);
             translate([0, 23, 0]) mirror([0, 1, 0]) {
-                cube([45, 2.75, 3]);
+                cube([55.5, 2.75, 3]);
                 translate([0, 0, 2])
                     cube([14, 5, 2]);
             }
+            hull(){
+                translate([46.5, 20.25, 0.5])
+                    cube([9, 1, 2]);
+                translate([44.5, 0, 0.5])
+                    cube([3, 23, 2]);
+            }
+
         }
         translate([34.5, 0, 0]) {
             cube([3, 23, 3]);
         }
         translate([33, 4.65 + 1.8, 2])
             cube([4.5, 9, 2]);
+    }
+}}
+module arduinoProMicroUSBCHolderBottom () { union(){
+    translate([0, -11, -5.6]) {
+        translate([-10, 0, 0]) {
+            translate([0, 0, -30])
+                cube([14, 4, 32]);
+            translate([0, 23, 0]) mirror([0, 1, 0]) {
+                translate([0, 0, -30])
+                    cube([14, 5, 32]);
+            }
+
+        }
+        translate([33, 4.65 + 1.8, -30])
+            cube([4.5, 9, 32]);
     }
 }}
