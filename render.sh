@@ -8,11 +8,11 @@ compile() {
     export filename=`echo $1 | cut -c 9- | cut -d'.' -f1`
     result=0
     if [ -z ${2+x} ]; then
-        result="$(openscad -o ./output/$filename.stl $1 2>&1)"
+        result="$(openscad --hardwarnings -o ./output/$filename.stl $1 2>&1)"
     else
-        result="$(openscad --backend=$2 -o ./output/$filename.stl $1 2>&1)"
+        result="$(openscad --hardwarnings --backend=$2 -o ./output/$filename.stl $1 2>&1)"
     fi
-    if [[ $result != *"ERROR:"* ]]; then
+    if [[ $result != *"ERROR:"* && $result != *"WARNING"* ]]; then
         END=$(date +%s)
         DIFF=$(( $END - $START ))
         if (( DIFF>59 )); then
@@ -30,5 +30,5 @@ compile() {
 for file in ./parts/*.scad; do
     compile $file $1 &
 done
-# wait for all pids
+
 wait

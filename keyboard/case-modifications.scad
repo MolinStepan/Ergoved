@@ -280,6 +280,26 @@ module USBCHoleDefault(){ union () {
     }
 }}
 
+module microUSBHoleDefault(){ union () {
+    translate([-1.5, -11, 1.5]) hull(){
+        translate([0, 8, 2])rotate(90, [0, -1, 0])
+            cylinder(20, 4, 4);
+        translate([0, 14, 2])rotate(90, [0, -1, 0])
+            cylinder(20, 4, 4);
+    }
+    translate([0, -11, 1.5]) hull(){
+        translate([0, 7.5, 2.8])rotate(90, [0, -1, 0])
+            cylinder(20, 0.5, 0.5);
+        translate([0, 8.5, 1.8])rotate(90, [0, -1, 0])
+            cylinder(20, 1.5, 1.5);
+
+        translate([0, 14.5, 2.8])rotate(90, [0, -1, 0])
+            cylinder(20, 0.5, 0.5);
+        translate([0, 13.5, 1.8])rotate(90, [0, -1, 0])
+            cylinder(20, 1.5, 1.5);
+    }
+}}
+
 
 module TRRSHole(){ union () {
     translate([-1.5, 6, 2.6])rotate(90, [0, -1, 0])

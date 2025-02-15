@@ -4,7 +4,7 @@ Work in progress, build at your own risc. Currently only supports arduino nano o
 [[./docs/img2.png]]
 
 * Compiling
-Install openscad, edit the variables.scad file, compile using
+Install openscad, edit the variables.scad file, change ./parts/*-case.scad and ./parts/*-bottom.scad to use your controllers (see ./keyboard/inner-holders.scad and maybe ./keyboard/case-modifications.scad), compile using
 #+begin_src bash :tangle yes
 bash render.sh
 #+end_src
