@@ -1,8 +1,9 @@
 * Status
-Work in progress, build at your own risc. Currently only supports arduino nano or pro micro as controller and XDA keycaps.
+Work in progress, build at your own risk. Currently only supports arduino nano or pro micro as controller and XDA keycaps.
+* Description
+Ergoved is a truly ergonomic parametric easy to build free as in freedom based & redpilled keyboard/pointing device for GNU operating system.
 [[./docs/img1.png]]
 [[./docs/img2.png]]
-
 * Compiling
 Install openscad, edit the variables.scad file, change ./parts/*-case.scad and ./parts/*-bottom.scad to use your controllers (see ./keyboard/inner-holders.scad and maybe ./keyboard/case-modifications.scad), compile using
 #+begin_src bash :tangle yes

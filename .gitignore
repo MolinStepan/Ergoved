@@ -1,5 +1,7 @@
 testing/*
 output/*.stl
 output/*.zip
+output/*.tar.*
 !output/.gitkeep
 logs/*.log
+todo.*

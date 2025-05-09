@@ -15,7 +15,7 @@ module rotatingWall(arr1, arr2, thickness)
                 sphere(thickness, true);
             translate(arr2[i+1])
                 sphere(thickness, true);
-            translate(arr1[i])
+            translate(arr1[i+1])
                 sphere(thickness, true);
         }
     }

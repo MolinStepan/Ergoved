@@ -91,107 +91,15 @@ difference(){
 module addTrackball() {
     difference(){
         union() {
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([-18.5 * sin(45), 18.5 * cos(45), -4.5])
-                    cylinder(9, 1.5, 1.5, true);
+        rotatingWall
+          ( [for (i = [-7:7]) ballPortPos + [12, 19 * sin(110 + 3*i), 19*cos(110 + 3*i)]]
+          , [for (i = [-7:7]) f3pos -31 * f3col + f3ort*i + [0, 0, 15]]
+          , 2);
+        rotatingWall
+          ( [for (i = [-7:7]) ballPortPos + [12, -18 * sin(110 + 3*i), -18*cos(110 + 3*i)]]
+          , [for (i = [0:14]) f4pos -31 * f4col + 9 * f4ort + [0, 0, 11 + i - f4pos.z]]
+          , 2);
 
-                translate(f3pos +
-                   [ sin(f3ang) * 31
-                   , -cos(f3ang) * 31
-                   , 13])
-                rotate(f3ang, [0, 0, 1])
-                rotate(90, [0, 1, 0])
-                    cylinder(15, 1.5, 1.5, true);
-
-            }
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([-18.5 * sin(-45), 18.5 * cos(-45), -4.5])
-                    cylinder(9, 1.5, 1.5, true);
-
-                translate(f3pos +
-                   [ sin(f3ang) * 31
-                   , -cos(f3ang) * 31
-                   , 13])
-                rotate(f3ang, [0, 0, 1])
-                rotate(90, [0, 1, 0])
-                    cylinder(15, 1.5, 1.5, true);
-
-            }
-//            hull(){
-//                translate(ballPortPos + [3, 0, 0])
-//                rotate(90, [0, -1, 0])
-//                translate([-18.5 * sin(45), -18.5 * cos(45), -4.5])
-//                    cylinder(9, 1.5, 1.5, true);
-//
-//                translate(f4pos +
-//                   [ sin(f4ang) * 31 + cos(f4ang) * 6
-//                   , -cos(f4ang) * 31 + sin(f4ang) * 6
-//                   , 13])
-//                rotate(f4ang, [0, 0, 1])
-//                rotate(90, [0, 1, 0])
-//                    cylinder(9, 1.5, 1.5, true);
-//
-//            }
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([18, 0, -8])
-                   sphere(2);
-                translate(f4pos +
-                   [ sin(f4ang) * 31 + cos(f4ang) * 9
-                   , -cos(f4ang) * 31 + sin(f4ang) * 9
-                   , 11])
-                   sphere(2);
-
-            }
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([18 * cos(45), -18 * sin(45), -8])
-                   sphere(2);
-                translate(f4pos +
-                   [ sin(f4ang) * 31 + cos(f4ang) * 9
-                   , -cos(f4ang) * 31 + sin(f4ang) * 9
-                   , 9])
-                   sphere(2);
-            }
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([18 * cos(90), -18 * sin(90), -8])
-                   sphere(2);
-                translate(f4pos +
-                   [ sin(f4ang) * 31 + cos(f4ang) * 9
-                   , -cos(f4ang) * 31 + sin(f4ang) * 9
-                   , 7])
-                   sphere(2);
-            }
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([18 * cos(135), -18 * sin(135), -8])
-                   sphere(2);
-                translate(f4pos +
-                   [ sin(f4ang) * 31 + cos(f4ang) * 9
-                   , -cos(f4ang) * 31 + sin(f4ang) * 9
-                   , 5])
-                   sphere(2);
-            }
-            hull(){
-                translate(ballPortPos + [3, 0, 0])
-                rotate(90, [0, -1, 0])
-                translate([18 * cos(180), -18 * sin(180), -8])
-                   sphere(2);
-                translate(f4pos +
-                   [ sin(f4ang) * 31 + cos(f4ang) * 9
-                   , -cos(f4ang) * 31 + sin(f4ang) * 9
-                   , 3])
-                   sphere(2);
-            }
         }
         translate([0, 0, -50])
             linear_extrude(100, [0, 0, 1])

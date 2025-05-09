@@ -329,7 +329,7 @@ module ballHolder () { render() { union () {
             translate([0, 0, 23]) rotate(-15, [1, 0, 0]) translate([0, 0, -23])
                 for(i = [0 : 2]) rotate(120 * i, [0, 0, 1]) translate ([0, 17.5, -3])
                     #translate([0, 0, 26 - sqrt(19^2 - 17.5^2)])
-                        sphere(2);
+                        sphere(2.1);
 
             translate([0, 0, -4])
                 linear_extrude(12, [0, 0, 1])

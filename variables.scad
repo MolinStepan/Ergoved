@@ -21,19 +21,19 @@
 // Relax your hand and measure fingertips position. Don't try to be too precise
 // Thumb probably should be bent to +ang direction a little, not sure what is the most ergonomic approach
 
-f1ang =
-f1pos =
+f1ang = 5;
+f1pos = [-22, -6, 3];
 
-f3ang =
-f3pos =
+f3ang = -5;
+f3pos =[22, -8, 5];
 
-f4ang =
-f4pos =
+f4ang = -15;
+f4pos = [48, -25, 10];
 
-thumbPos =
+thumbPos = [-50, -67, 0];
 
 //distance between M2 bolts on your trackball sensor, from center
-ballBoltDistance =
+ballBoltDistance = 13;
 
 
 // do not change, measure from here

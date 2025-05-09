@@ -21,7 +21,6 @@ module TRRSHolderBottom () {
 }
 
 module TRRSHolderCentered () {
-
     difference(){
         hull(){
             translate([-10, -5, 0])
@@ -39,7 +38,6 @@ module TRRSHolderCentered () {
 
 
 
-//43.8   18.5 -> 18.2
 module holderBorder(length, width) { union () {
     translate([0, -(width + 0.3)/2 -1.9, 0]) {
         translate([-10, 0, 0]) {

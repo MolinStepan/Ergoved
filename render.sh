@@ -16,13 +16,13 @@ compile() {
         END=$(date +%s)
         DIFF=$(( $END - $START ))
         if (( DIFF>59 )); then
-            printf "$filename.stl rendered in %02d:%02d:%02d\n" \
+            printf "[\e[32mRendered\e[0m] $filename.stl in %02d:%02d:%02d\n" \
                    "$((DIFF/3600))" "$((DIFF%3600/60))" "$((DIFF%60))"
         else
-            echo "$filename.stl rendered in $DIFF seconds"
+            echo -e "[\e[32mRendered\e[0m] $filename.stl in $DIFF seconds"
         fi
     else
-        echo "$filename.scad failed"
+        echo -e "[\e[31mFailed\e[0m] $filename.scad"
         echo $result
     fi
 }

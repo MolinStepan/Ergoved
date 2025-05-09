@@ -22,7 +22,7 @@ module defaultSocket(){
                     translate([0, 0, -0.75])
                         cube([18.6, 8, 4.5], true);
                 }
-                cube(14, true);
+                cube(14.2, true);
             }
          hull () {
            translate ([7.75, 0, -0.75]) {
